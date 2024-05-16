@@ -21,8 +21,15 @@ export function NewTaskForm({ onAddNewTask }: NewTaskFormProps) {
 			const id = crypto.randomUUID();
 			const description = inputRef.current?.value ?? "";
 			const createdAt = new Date();
+			const status = "OPEN";
 
-			onAddNewTask({ id, description, createdAt, updatedAt: createdAt });
+			onAddNewTask({
+				id,
+				description,
+				status,
+				createdAt,
+				updatedAt: createdAt,
+			});
 			inputRef.current.value = "";
 		},
 		[onAddNewTask],
