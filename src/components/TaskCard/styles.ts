@@ -1,4 +1,5 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
+import type { Task } from "./TaskCard.tsx";
 
 export const StyledListItem = styled.li`
 	display: flex;
@@ -9,8 +10,17 @@ export const StyledListItem = styled.li`
 	gap: 12px;
 	padding: 1rem;
 	align-content: start;
+`;
 
-	span {
-		flex-grow: 1;
-	}
+export const StyledListItemText = styled.span<{
+	status: Task["status"];
+}>`
+	flex-grow: 1;
+
+	${({ status, theme }) =>
+		status === "DONE" &&
+		css`
+		color: ${theme.colors["gray-300"]};
+		text-decoration: line-through;
+	`}
 `;

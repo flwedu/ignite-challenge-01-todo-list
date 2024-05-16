@@ -1,6 +1,7 @@
 import { Trash2Icon } from "lucide-react";
+import { useTaskMethods } from "../../hooks/useTaskMethods.ts";
 import { TaskStatusIcon } from "./TaskStatusIcon.tsx";
-import { StyledListItem } from "./styles.ts";
+import { StyledListItem, StyledListItemText } from "./styles.ts";
 
 export interface Task {
 	id: string;
@@ -13,12 +14,14 @@ export interface Task {
 export interface TaskProps
 	extends Pick<Task, "id" | "status" | "description"> {}
 
-export function TaskCard({ status, description }: TaskProps) {
+export function TaskCard({ status, description, id }: TaskProps) {
+	const { onClickCheck, onClickDelete } = useTaskMethods(id, status);
+
 	return (
 		<StyledListItem>
-			<TaskStatusIcon status={status} />
-			<span>{description}</span>
-			<Trash2Icon />
+			<TaskStatusIcon status={status} onClick={onClickCheck} />
+			<StyledListItemText status={status}>{description}</StyledListItemText>
+			<Trash2Icon onClick={onClickDelete} />
 		</StyledListItem>
 	);
 }
