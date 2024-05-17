@@ -34,6 +34,7 @@ export const StyledForm = styled.form`
 		border-radius: 0.5rem;
 		border: none;
 		cursor: pointer;
+		transition: 0.2s background-color linear;
 
 		&:hover {
 			background: ${(props) => props.theme.colors.primary};

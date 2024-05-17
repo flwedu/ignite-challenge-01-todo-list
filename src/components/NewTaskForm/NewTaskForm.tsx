@@ -1,3 +1,4 @@
+import { PlusCircle } from "lucide-react";
 import { type HTMLProps, useCallback, useRef } from "react";
 import type { Task } from "../TaskCard/TaskCard.tsx";
 import { StyledForm } from "./styles.ts";
@@ -43,7 +44,9 @@ export function NewTaskForm({ onAddNewTask }: NewTaskFormProps) {
 				type="text"
 				ref={inputRef}
 			/>
-			<button type="submit">Criar</button>
+			<button type="submit">
+				Criar <PlusCircle />
+			</button>
 		</StyledForm>
 	);
 }
