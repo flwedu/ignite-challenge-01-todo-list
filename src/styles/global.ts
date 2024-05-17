@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 		color: ${({ theme }) => theme.colors.text};
 		background: ${({ theme }) => theme.colors["gray-600"]};
 		font-family: ${({ theme }) => theme.fonts.family.body};
+		font-size: ${({ theme }) => theme.fonts.sizes.base};
 	}
 
 	main {
