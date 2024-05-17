@@ -1,11 +1,10 @@
-import type { PropsWithChildren } from "react";
 import { RocketSvg } from "./RocketSvg.tsx";
 import { StyledHeadingDiv } from "./styles.ts";
 
-export function AppHeading({ children }: PropsWithChildren<unknown>) {
+export function AppHeading() {
 	return (
 		<StyledHeadingDiv>
-			<RocketSvg /> {children}
+			<RocketSvg /> <h1>todo</h1>
 		</StyledHeadingDiv>
 	);
 }

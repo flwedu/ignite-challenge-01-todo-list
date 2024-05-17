@@ -12,9 +12,7 @@ function App() {
 			onRemoveTask={onRemoveTask}
 			onCheckTask={onCheckTask}
 		>
-			<AppHeading>
-				<h1>todo</h1>
-			</AppHeading>
+			<AppHeading />
 			<main>
 				<NewTaskForm onAddNewTask={onAddNewTask} />
 				<TasksList tasks={tasks} />

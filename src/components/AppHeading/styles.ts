@@ -10,5 +10,13 @@ export const StyledHeadingDiv = styled.div`
 
 	h1 {
 		font-weight: bold;
+		background: ${({ theme }) =>
+			`linear-gradient(to right,
+				${theme.colors.primary} 0%,
+				${theme.colors.primary} 45%,
+				${theme.colors.secondary} 45%
+				)`};
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 `;
