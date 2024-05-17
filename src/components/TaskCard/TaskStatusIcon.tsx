@@ -1,4 +1,4 @@
-import { CheckCircleIcon, Circle, type LucideProps } from "lucide-react";
+import { Circle, CircleCheck, type LucideProps } from "lucide-react";
 import { useTheme } from "styled-components";
 import type { Task } from "./TaskCard.tsx";
 
@@ -10,7 +10,7 @@ export function TaskStatusIcon({ status, ...props }: TaskStatusIconProps) {
 	const theme = useTheme();
 
 	if (status === "DONE") {
-		return <CheckCircleIcon fill={theme.colors.secondary} {...props} />;
+		return <CircleCheck fill={theme.colors.secondary} {...props} />;
 	}
 
 	return <Circle color={theme.colors.primary} {...props} />;
